@@ -1,25 +1,22 @@
 <div class="navBar">
     <ul *ngIf="!user.connected">
-        <li class="logo">
+        <li class="logo" (click)="logoClick()">
             <img src="assets/images/logo-full.svg" alt="EasyVisite Logo" height="34">
-        </li>
-        <li>
-            contact
-        </li>
-        <li>
-            à propos
         </li>
         <li class="login round" (click)="loginButtonClick()">
             <iconify-icon icon="mdi:login" width="15px" height="15px"></iconify-icon>
             Connexion
         </li>
+        <li style="float: right;">
+            contact
+        </li>
+        <li style="float: right;">
+            à propos
+        </li>
     </ul>
     <ul *ngIf="user.connected">
-        <li class="logo">
-            <img src="assets/images/logo-full.svg" alt="EasyVisite Logo" height="34">
-        </li>
-        <li>
-            something 2
+        <li class="logo" (click)="logoClick()">
+            <img src="assets/images/logo-full.svg" alt="EasyVisite Logo" height="36">
         </li>
         <li class="logout" (click)="logoutButtonClick()">
             <iconify-icon icon="mdi:logout" width="15px" height="15px"></iconify-icon>

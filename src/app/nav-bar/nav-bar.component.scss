@@ -2,10 +2,11 @@ $rad: 15px;
 
 .navBar{
     background-color: black;
+    border-radius: $rad;
     color: white;
+    font-size: large;
     margin: 0;
     padding: 0%;
-    border-radius: $rad;
 
     ul{
         list-style-type: none;

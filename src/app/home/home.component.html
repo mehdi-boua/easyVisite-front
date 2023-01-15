@@ -3,14 +3,13 @@
 <!--si l'utilisateur est connecté-->
 <div *ngIf="user.connected">
     <div class="content">
-        <p>l'utilisateur est connecté</p>
         <div class="option">
             <div (click)="newDocClick()">
                 <iconify-icon icon="fluent:doctor-48-regular" width="150px" height="150px"></iconify-icon>
                 <h3>Ajouter un médecin</h3>
             </div>
         </div>
-        <div class="option">
+        <div class="option" (click)="newPharmClick()">
             <div>
                 <iconify-icon icon="healthicons:pharmacy" width="150px" height="150px"></iconify-icon>
                 <h3>Ajouter une Pharmacie</h3>

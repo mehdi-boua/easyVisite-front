@@ -13,4 +13,8 @@ export class HomeComponent {
   newDocClick(){
     this.router.navigateByUrl('/newDoc')
   }
+
+  newPharmClick(){
+    this.router.navigateByUrl("/newPharm")
+  }
 }

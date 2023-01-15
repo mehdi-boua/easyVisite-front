@@ -7,6 +7,7 @@ import { UserService } from '../user.service';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss']
 })
+
 export class NavBarComponent {
   constructor(public user: UserService, private router: Router){}
 
@@ -17,6 +18,10 @@ export class NavBarComponent {
 
   logoutButtonClick(){
     this.user.connected = false
+    this.router.navigateByUrl("/")
+  }
+
+  logoClick(){
     this.router.navigateByUrl("/")
   }
 
