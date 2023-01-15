@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
@@ -7,8 +7,14 @@ import { UserService } from '../user.service';
   templateUrl: './nv-medecin.component.html',
   styleUrls: ['./nv-medecin.component.scss']
 })
-export class NvMedecinComponent {
+export class NvMedecinComponent implements OnInit{
   constructor(public user: UserService, private router: Router){}
+
+  ngOnInit(): void {
+    if(!this.user.connected){
+      this.router.navigateByUrl("/login")
+    }
+  }
 
   submitButtonClick(){
     //TODO: Complete this function
@@ -18,4 +24,9 @@ export class NvMedecinComponent {
   cancelButtonClick(){
     this.router.navigateByUrl("/")
   }
+
+  savePosClick(){
+    //TODO: write this function
+  }
+
 }
