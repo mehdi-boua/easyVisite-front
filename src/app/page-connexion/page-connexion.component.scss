@@ -1,0 +1,51 @@
+div.border{
+    background-color: lightgray;
+    border-color: lightblue;
+    border-radius: 15px;
+    border-style: none;
+    border-width: 1px;
+    display: block;
+    margin: 50px auto;
+    padding: 15px;
+    width: fit-content;
+}
+
+input[type=text], input[type=password]{
+    border-color: lightblue;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    display: block;
+    margin: 15px auto;
+    padding: 12px 20px;
+    text-align: center;
+    width: 250px;
+}
+
+input[type=submit]{
+    background-color: #3fc1c9;
+    border-color: #33FFDA;
+    border-radius: 5px;
+    border-style: none;
+    border-width: 1px;
+    display: block;
+    color: white;
+    margin: 15px auto;
+    padding: 12px 20px;
+    width: 290px;
+}
+
+input[type=submit]:hover{
+    background-color: skyblue;
+}
+
+input[type=submit]:active{
+    background-color: green;
+}
+
+img.logo{
+    display: block;
+    width: 250px;
+    margin: auto;
+    padding: auto;
+}

@@ -1,0 +1,91 @@
+.form{
+    background-color: lightgray;
+    border-radius: 15px;
+    color: #3faac9;
+    display: block;
+    font-weight: bold;
+    margin: auto;
+    padding: 25px 50px;
+    text-align: center;
+    width: fit-content;
+
+    button{
+        border-style: none;
+        border-radius: 5px;
+        color: white;
+        display: inline;
+        margin-top: 15px;
+        padding: 12px 20px;
+        width: 160px;
+    }
+
+    button.cancel{
+        background-color: indianred;
+        margin-left: 10px;
+    }
+    
+    button.pos{
+        background-color: #3fc1c9;
+        display: block;
+        width: 340px;
+    }
+
+    button.submit{
+        background-color: #3fc1c9;
+        margin-right: 10px;
+    }
+
+    button.pos:hover, button.submit:hover{
+        background-color: skyblue;
+    }
+
+    button.pos:active, button.submit:active{
+        background-color: green;
+    }
+
+    button.cancel:hover{
+        background-color: lightcoral;
+    }
+
+    button.cancel:active{
+        background-color: red;
+    }
+
+    img{
+        width: 300px;
+    }
+
+    input[type=text], input[type=number]{
+        border-color: lightblue;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        display: block;
+        margin: auto;
+        padding: 12px 20px;
+        text-align: center;
+        width: 300px;
+    }
+
+    input[type=text]:hover, input[type=number]:hover{
+        background-color: lightblue;
+    }
+
+    *:focus {
+        border-color: lightblue;
+        border-style: solid;
+        border-width: 3px;
+        outline: none;
+    }
+
+    input[type=number]::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+    }
+
+    label{
+        display: block;
+        margin-top: 15px;
+        padding: auto;
+        text-align: left;
+    }
+}

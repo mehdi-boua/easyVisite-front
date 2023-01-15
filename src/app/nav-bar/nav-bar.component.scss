@@ -1,0 +1,48 @@
+$rad: 15px;
+
+.navBar{
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0%;
+    border-radius: $rad;
+
+    ul{
+        list-style-type: none;
+        margin: 0px;
+        overflow: hidden;
+        padding: 0px;
+    }
+
+    li{
+        float: left;
+        display: block;
+        margin: auto;
+    }
+    
+    li:not(.logo){
+        text-align: center;
+        padding: 10px 15px;    
+    }
+
+    li:hover:not(.login ,.logout){
+        background-color: rgb(30,30,30);        
+    }
+
+    li.logo{
+        border-bottom-left-radius: $rad;
+        border-top-left-radius: $rad;
+    }
+
+    .login, .logout{
+        border-bottom-right-radius: $rad;
+        border-top-right-radius: $rad;
+        float: right;
+        background-color: gray;
+    }
+    
+    .login:hover, .logout:hover{
+        background-color: lightslategray;
+    }
+    
+}

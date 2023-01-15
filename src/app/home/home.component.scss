@@ -1,0 +1,35 @@
+$rad : 15px;
+
+.content{
+    text-align: center;
+}
+
+.option{
+    background-color: lightblue;
+
+    border-color: lightblue;
+    border-radius: $rad;
+    border-style: none;
+    border-width: 1px ;
+    display: inline-block;
+    margin: 10px 20px;
+    text-align: center;
+    width: 250px;
+}
+
+.option:hover{
+    border-color: skyblue;
+    border-radius: $rad;
+    background-color: skyblue;
+}
+
+.logo{
+    margin: auto;
+}
+
+.content{
+    padding: 25px 50px;
+    .center{
+        text-align: center;
+    }
+}
