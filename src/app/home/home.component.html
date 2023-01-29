@@ -15,7 +15,7 @@
                 <h3>Ajouter une Pharmacie</h3>
             </div>
         </div>
-        <div class="option">
+        <div class="option" (click)="addVisiteClick()">
             <div>
                 <iconify-icon icon="material-symbols:card-travel" width="150px" height="150px"></iconify-icon>
                 <h3>Mentionner une visite</h3>
@@ -34,7 +34,8 @@
 <!--si l'utilisateur n'est pas connecté-->
 <div *ngIf="!user.connected">
     <div class="content center">
-        <img class="logo" src="./assets/images/logo-full.svg">
+        <!--<img class="logo" src="./assets/images/logo-full.svg">-->
+        <img class="logo" src="./assets/images/Logo2.svg">
         <p>
             Le site idéal pour un délégué médical/commercial
         </p>

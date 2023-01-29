@@ -1,1 +1,27 @@
-<p>nv-visite works!</p>
+<nav-bar></nav-bar>
+<div class="choiceBar">
+    <ul>
+        <li id="choice-doc" class="selected" (click)="docChoiceClick()">Médecin</li>
+        <li id="choice-pharm" (click)="pharmChoiceClick()">Pharmacien</li>
+    </ul>
+</div>
+
+<div [hidden]="!docForm">
+    <div class="form">
+        <label>Select 1</label>
+        <select>
+            <option>opt 1</option>
+            <option>opt 2</option>
+            <option>opt 3</option>
+            <option>opt 4</option>
+            <option>opt 5</option>
+        </select>
+        <label for="">Commentaire:</label>
+        <input type="text">
+    </div>
+</div>
+<div [hidden]="!pharmForm">
+    <div class="form">
+        Pharm Form here
+    </div>
+</div>

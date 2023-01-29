@@ -1,4 +1,5 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { NvPharmacieComponent } from './nv-pharmacie/nv-pharmacie.component';
 import { NvVisiteComponent } from './nv-visite/nv-visite.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ContactComponent } from './contact/contact.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,10 +20,12 @@ import { ContactComponent } from './contact/contact.component';
     NvPharmacieComponent,
     NvVisiteComponent,
     NavBarComponent,
-    ContactComponent
+    ContactComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],

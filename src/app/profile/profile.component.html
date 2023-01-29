@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+<nav-bar></nav-bar>
+<div class="form" *ngIf="!modif; else modificationBlock;">
+    <div class="pdp">
+        <iconify-icon icon="iconoir:profile-circle" width="150"></iconify-icon>
+    </div>
+    <div class="infos">
+        <label>Nom:</label><p>{{ user.nom }}</p>
+        <label>Prenom:</label><p>{{ user.prenom }}</p>
+        <label>Adresse mail:</label><p>{{ user.mail }}</p>
+        <label>Mot de Passe:</label><p>{{ user.mdp }}</p>
+    </div>
+    <button class="pos" (click)="modifierClick()">Modifier</button>
+</div>
+<ng-template #modificationBlock>
+    <div class="form">
+        <div class="pdp" (click)="pdpChange()">
+            <iconify-icon icon="iconoir:profile-circle" width="150"></iconify-icon>
+        </div>    
+        <div class="modif">
+            <label>Nom:</label><input type="text" [(ngModel)]="nom">
+            <label>Prenom:</label><input type="text" [(ngModel)]="prenom">
+            <label>Adresse mail:</label><input type="text" [(ngModel)]="mail">
+            <label>Mot de Passe:</label>
+            <div class="passContainer">
+                <input type="{{!showPass ? 'password' : 'text'}}" [(ngModel)]="mdp">
+                <iconify-icon icon="{{ showPass? 'fluent:eye-hide-24-filled' : 'fluent:eye-show-24-filled'}}"
+                    width="30"
+                    class="passIcon"
+                    (click)="passVisibility()"
+                ></iconify-icon>
+            </div>
+        </div>
+        <button class="submit" (click)="enregistrerClick()">Enregistrer</button>
+        <button class="cancel" (click)="annulerClick()">Annuler</button>
+    </div>
+</ng-template>
+
+<div id="newPdp" class="newPdp hide" (click)="hideNewPdp()">
+    <div class="receiver" (click)="$event.stopPropagation(); ">
+        <div class="icon">
+            <iconify-icon icon="material-symbols:download-rounded" height="30vh"></iconify-icon>
+            <p>Glissez votre nouvelle Photo de profile ici.</p>
+            <p>ou</p>
+            <button class="submit">Parcourir</button>
+        </div>
+    </div>
+</div>
