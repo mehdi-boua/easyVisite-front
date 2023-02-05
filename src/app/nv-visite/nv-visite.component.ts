@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MedecinsService } from '../services/medecins.service';
+import { MedocsService } from '../services/medocs.service';
+import { PharmaciesService } from '../services/pharmacies.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -8,9 +11,14 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./nv-visite.component.scss']
 })
 export class NvVisiteComponent implements OnInit{
-  constructor(private router: Router, private user:UserService){}
   docForm : boolean
   pharmForm: boolean
+
+  // doc Variables
+  @Input() docId
+  
+  constructor(public router: Router, private user:UserService, public docs: MedecinsService, 
+    public pharmas: PharmaciesService, public medocs: MedocsService){}
 
   ngOnInit(): void {
     if(!this.user.connected){
@@ -20,6 +28,11 @@ export class NvVisiteComponent implements OnInit{
     this.docForm = document.querySelector("#choice-doc")?.classList.contains("selected")!
     this.pharmForm = document.querySelector("#choice-pharm")?.classList.contains("selected")!
   }
+
+  validerDoc(){
+    //TODO: complete here
+  }
+
 
   docChoiceClick(){
     document.querySelector("#choice-pharm")?.classList.remove("selected")

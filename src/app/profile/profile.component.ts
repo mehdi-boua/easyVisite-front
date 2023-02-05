@@ -7,8 +7,11 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent {
-  modif: boolean = true
+  public file
+
+  modif: boolean = false
   showPass: boolean = false
+  
   @Input()
   nom: string
   @Input()
@@ -59,5 +62,10 @@ export class ProfileComponent {
 
   hideNewPdp(){
     document.querySelector("#newPdp")?.classList.add("hide")
+  }
+
+  onFileDropped(ev){
+    this.file = ev
+    console.log(ev)
   }
 }

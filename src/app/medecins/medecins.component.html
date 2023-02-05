@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let doc of docs.listeMedecins">
+        {{doc.nom}}&nbsp;{{doc.prenom}}
+        <button class="update" (click)="router.navigateByUrl('/medecins/'+doc.id)">
+            <iconify-icon icon="material-symbols:edit-note-rounded" height="20"></iconify-icon>
+        </button>
+        <button class="delete" (click)="supprimer(doc)">
+            <iconify-icon icon="mdi:garbage-can-empty" height="20"></iconify-icon>
+        </button> 
+    </li>
+    <button class="submit" (click)="router.navigateByUrl('/newDoc')">Nouveau Médecin</button>
+</ul>

@@ -35,27 +35,23 @@
         margin-right: 10px;
     }
 
-    button.pos:hover, button.submit:hover{
-        background-color: skyblue;
-    }
-
-    button.pos:active, button.submit:active{
-        background-color: green;
-    }
-
-    button.cancel:hover{
-        background-color: lightcoral;
-    }
-
-    button.cancel:active{
-        background-color: red;
-    }
-
     img{
         width: 300px;
     }
 
-    input[type=text], input[type=number]{
+    input[type=text], input[type=number] {
+        border-color: lightblue;
+        border-radius: 5px;
+        border-style: solid;
+        border-width: 1px;
+        display: block;
+        margin: auto;
+        padding: 12px 20px;
+        text-align: center;
+        width: 300px;
+    }
+
+    select {
         border-color: lightblue;
         border-radius: 5px;
         border-style: solid;

@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let pharm of service.listePharmacies">
+        {{ pharm.officine }} 
+        <button class="update" (click)="router.navigateByUrl('/pharmacies/'+pharm.id)">
+            <iconify-icon icon="material-symbols:edit-note-rounded" height="20"></iconify-icon>
+        </button>
+        <button class="delete" (click)="supprimer(pharm)">
+            <iconify-icon icon="mdi:garbage-can-empty" height="20"></iconify-icon>
+        </button> 
+    </li>
+    <button class="submit" (click)="router.navigateByUrl('/newPharm')">Nouvelle pharmacie</button>
+</ul>

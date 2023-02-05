@@ -1,0 +1,23 @@
+<nav-bar></nav-bar>
+<div class="form">
+    <img src="./assets/images/new-pharm.svg">
+    
+    <label>Officine:</label>
+    <input type="text" placeholder="Nom de l'Officine" [(ngModel)]="officine">
+    <label>Commune:</label>
+    <input type="text" placeholder="Commune de l'Officine" [(ngModel)]="commune">
+    <label>Département:</label>
+    <input type="text" placeholder="Département de l'Officine" [(ngModel)]="departement">
+    <label>Grossistes</label>
+    <div *ngFor="let grossiste of grossistes.listeGrossistes" class="checkbox">
+        <input 
+        [checked]="containsGrossiste(grossiste.id)"
+        type="checkbox"  
+        value="{{grossiste.id}}" 
+        (click)="addGrossiste(grossiste)">
+        
+        <label>{{grossiste.nom}}</label>
+    </div>
+    <button class="submit" (click)="submitButtonClick()">Valider</button>
+    <button class="cancel" (click)="router.navigateByUrl('/')">Annuler</button>
+</div>

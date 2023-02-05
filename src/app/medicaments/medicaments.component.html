@@ -1,0 +1,19 @@
+<nav-bar></nav-bar>
+<ul>
+    <li *ngFor="let medoc of service.listeMedocs">
+        {{ medoc.nom }} 
+        <button class="delete" (click)="supprimer(medoc)">
+            <iconify-icon icon="mdi:garbage-can-empty" height="20"></iconify-icon>
+        </button> 
+    </li>
+    <button class="submit" (click)="newMedoc = true">Nouveau médicament</button>
+</ul>
+
+<div [ngClass]="{'hide' : !newMedoc}" class="popup">
+    <div class="content">
+        <label>Nom du grossiste:</label>
+        <input type="text" [(ngModel)]="nouveauMedoc">
+        <button class="submit" (click)="enregistrerNouveau()">Enregistrer</button>
+        <button class="cancel" (click)="newMedoc = false">Annuler</button>
+    </div>
+</div>

@@ -1,27 +1,42 @@
 <nav-bar></nav-bar>
 <div class="choiceBar">
     <ul>
-        <li id="choice-doc" class="selected" (click)="docChoiceClick()">Médecin</li>
-        <li id="choice-pharm" (click)="pharmChoiceClick()">Pharmacien</li>
+        <li id="choice-pharm" class="selected" (click)="pharmChoiceClick()">Pharmacie</li>
+        <li id="choice-doc" (click)="docChoiceClick()">Médecin</li>
     </ul>
 </div>
 
+<!-- Formulaire de visite d'un médecin -->
 <div [hidden]="!docForm">
     <div class="form">
-        <label>Select 1</label>
-        <select>
-            <option>opt 1</option>
-            <option>opt 2</option>
-            <option>opt 3</option>
-            <option>opt 4</option>
-            <option>opt 5</option>
+        <label>Chez qui êtes vous? </label>
+        <select [(ngModel)]="docId">
+            <option selected disabled>Séléctionnez le médecin</option>
+            <option *ngFor="let doc of docs.listeMedecins" value="{{doc.id}}">{{doc.nom}}&nbsp;{{doc.prenom}}</option>
         </select>
-        <label for="">Commentaire:</label>
-        <input type="text">
+        <button class="submit" (click)="validerDoc()">Confirmer</button>
+        <button class="cancel" (click)="router.navigateByUrl('/')">Annuler</button>
     </div>
 </div>
+
+<!-- Formulaire de visite d'une pharmacie -->
 <div [hidden]="!pharmForm">
     <div class="form">
-        Pharm Form here
+        <label>Chez qui êtes vous? </label>
+        <select [(ngModel)]="docId">
+            <option selected disabled>Séléctionnez le médecin</option>
+            <option *ngFor="let pharm of pharmas.listePharmacies" value="{{pharm.id}}">{{pharm.officine}}</option>
+        </select>
+        <div *ngFor="let medoc of medocs.listeMedocs">
+            <label>{{medoc.nom}}</label>
+            <p>Disponibilité</p>
+            <input type="text">
+            <p>Rotation</p>
+            <input type="text">
+
+        </div>
+
+        <button class="submit">Confirmer</button>
+        <button class="cancel" (click)="router.navigateByUrl('/')">Annuler</button>
     </div>
 </div>

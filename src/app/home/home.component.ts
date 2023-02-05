@@ -8,7 +8,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  constructor(private router: Router, public user: UserService){}
+  constructor(public router: Router, public user: UserService){}
 
   newDocClick(){
     this.router.navigateByUrl('/newDoc')

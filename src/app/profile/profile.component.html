@@ -37,12 +37,16 @@
 </ng-template>
 
 <div id="newPdp" class="newPdp hide" (click)="hideNewPdp()">
-    <div class="receiver" (click)="$event.stopPropagation(); ">
-        <div class="icon">
+    <div class="receiver" (click)="$event.stopPropagation();" appDnd (fileDropped)="onFileDropped($event)">
+        <div *ngIf="!file; else elseBlock;" class="icon">
             <iconify-icon icon="material-symbols:download-rounded" height="30vh"></iconify-icon>
             <p>Glissez votre nouvelle Photo de profile ici.</p>
             <p>ou</p>
             <button class="submit">Parcourir</button>
         </div>
+        <ng-template #elseBlock>
+            <iconify-icon icon="material-symbols:file-present-outline" width="200"></iconify-icon>
+            <p>{{file.name}}</p>
+        </ng-template>
     </div>
 </div>

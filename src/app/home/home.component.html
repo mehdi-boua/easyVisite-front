@@ -4,21 +4,45 @@
 <div *ngIf="user.connected">
     <div class="content">
         <div class="option">
-            <div (click)="newDocClick()">
+            <div (click)="router.navigateByUrl('/newDoc')">
                 <iconify-icon icon="fluent:doctor-48-regular" width="150px" height="150px"></iconify-icon>
                 <h3>Ajouter un médecin</h3>
             </div>
         </div>
-        <div class="option" (click)="newPharmClick()">
+        <div class="option">
+            <div (click)="router.navigateByUrl('/medecins')">
+                <iconify-icon icon="material-symbols:patient-list-outline-rounded" width="150px" height="150px"></iconify-icon>
+                <h3>Liste des médecin</h3>
+            </div>
+        </div>
+        <div class="option" (click)="router.navigateByUrl('/newPharm')">
             <div>
                 <iconify-icon icon="healthicons:pharmacy" width="150px" height="150px"></iconify-icon>
                 <h3>Ajouter une Pharmacie</h3>
             </div>
         </div>
-        <div class="option" (click)="addVisiteClick()">
+        <div class="option" (click)="router.navigateByUrl('/pharmacies')">
+            <div>
+                <iconify-icon icon="material-symbols:list-alt" width="150px" height="150px"></iconify-icon>
+                <h3>Liste des Pharmacies</h3>
+            </div>
+        </div>
+        <div class="option" (click)="router.navigateByUrl('/addVisit')">
             <div>
                 <iconify-icon icon="material-symbols:card-travel" width="150px" height="150px"></iconify-icon>
                 <h3>Mentionner une visite</h3>
+            </div>
+        </div>
+        <div class="option" (click)="router.navigateByUrl('/medicaments')">
+            <div>
+                <iconify-icon icon="material-symbols:medication-liquid" width="150px" height="150px"></iconify-icon>
+                <h3>Liste des medicaments</h3>
+            </div>
+        </div>
+        <div class="option" (click)="router.navigateByUrl('/grossistes')">
+            <div>
+                <iconify-icon icon="ic:baseline-sell" width="150px" height="150px"></iconify-icon>
+                <h3>Liste des grossistes</h3>
             </div>
         </div>
     </div>

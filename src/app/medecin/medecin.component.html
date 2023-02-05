@@ -1,0 +1,31 @@
+<nav-bar></nav-bar>
+<div *ngIf="user.connected">
+    <div class="form">
+        <img src="./assets/images/new-doc.svg">
+        <label>Nom:</label>
+        <input type="text" placeholder="Nom du médecin" [(ngModel)]="nom">
+        <label>Prénom:</label>
+        <input type="text" placeholder="Prénom du médecin" [(ngModel)]="prenom">
+        <label>Commune:</label>
+        <input type="text" placeholder="Commune du médecin" [(ngModel)]="commune">
+        <label>Departement:</label>
+        <input type="text" placeholder="Wilaya du médecin" [(ngModel)]="departement">
+        <label>Spécialité</label>
+        <select [(ngModel)]="specialite">
+            <option disabled>Séléctionnez la specialité</option>
+            <option name="CARDIO"   value="CARDIO"  [selected]="specialite == 'CARDIO'" >CARDIO</option>
+            <option name="MI"       value="MI"      [selected]="specialite == 'MI'" >MI</option>
+            <option name="DIABETO"  value="DIABETO" [selected]="specialite == 'DIABETO'" >DIABETO/ENDO</option>
+            <option name="NEPHRO"   value="NEPHRO"  [selected]="specialite == 'NEPHRO'" >NEPHRO</option>
+            <option name="MG"       value="MG"      [selected]="specialite == 'MG'" >MG</option>
+        </select>
+        <label>Secteur:</label>
+        <select [(ngModel)]="secteur">
+            <option selected disabled>Séléctionnez le secteur</option>
+            <option>Privé</option>
+            <option>public</option>
+        </select>
+        <button class="submit" (click)="submitButtonClick()">Valider</button>
+        <button class="cancel" (click)="cancelButtonClick()">Annuler</button>
+    </div>
+</div>

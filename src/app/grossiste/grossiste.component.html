@@ -1,0 +1,19 @@
+<nav-bar></nav-bar>
+<ul>
+    <li *ngFor="let gros of service.listeGrossistes">
+        {{ gros.nom }} 
+        <button class="delete" (click)="supprimer(gros)">
+            <iconify-icon icon="mdi:garbage-can-empty" height="20"></iconify-icon>
+        </button> 
+    </li>
+    <button class="submit" (click)="newGros = true">Nouveau grossiste</button>
+</ul>
+
+<div [ngClass]="{'hide' : !newGros}" class="popup">
+    <div class="content">
+        <label>Nom du grossiste:</label>
+        <input type="text" [(ngModel)]="nouveauGrossiste">
+        <button class="submit" (click)="enregistrerNouveau()">Enregistrer</button>
+        <button class="cancel" (click)="newGros = false">Annuler</button>
+    </div>
+</div>

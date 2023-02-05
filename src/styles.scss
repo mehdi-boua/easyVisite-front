@@ -2,3 +2,39 @@
 body{
     background-color: rgb(54, 79, 107);
 }
+
+button{
+    border-style: none;
+    border-radius: 5px;
+    color: white;
+    display: inline;
+    margin-top: 15px;
+    padding: 12px 20px;
+    width: fit-content;
+}
+
+button.submit{
+    background-color: #3fc1c9;
+    margin-right: 10px;
+}
+
+button.cancel{
+    background-color: indianred;
+    margin-left: 10px;
+}
+
+button.pos:hover, button.submit:hover{
+    background-color: skyblue;
+}
+
+button.pos:active, button.submit:active{
+    background-color: green;
+}
+
+button.cancel:hover{
+    background-color: lightcoral;
+}
+
+button.cancel:active{
+    background-color: red;
+}
